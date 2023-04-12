@@ -1,0 +1,109 @@
+/* Import the Bootstrap Icons CSS stylesheets */
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+.headerPage .myNavbar {
+  height: 60px;
+  width: 100vw;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  .navItem {
+    display: flex;
+    align-items: center;
+    height: inherit;
+  }
+  .navItem-iconParent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: inherit;
+    &:hover {
+      background-color: #f0f2f5;
+      border-radius: 8px;
+    }
+  }
+  .topIcon {
+    cursor: pointer;
+    margin: 13px 28px;
+  }
+  .lIcon {
+    background: linear-gradient(to top, #6ce8e0, #8f9296);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin: 0px 10px;
+  }
+  .picIcon {
+    border-radius: 50px;
+    position: relative;
+  }
+  .icon {
+    cursor: pointer;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin: 0px 2.5px;
+    background-color: #f0f2f5;
+    &.pro {
+      width: 68px;
+      border-radius: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+    }
+  }
+  .myInput {
+    height: 40px;
+    border-radius: 50px;
+    background-color: #f0f2f5;
+    border: none;
+    width: 280px;
+    margin: 0px 10px;
+    &:focus-visible {
+      border: 1px solid #00000091;
+    }
+  }
+}
+.profile-sideBar {
+  .card {
+    color: #202020;
+    border: none;
+    border-radius: 7px;
+    hr {
+      color: #f0f2f5 !important;
+      opacity: 1;
+      border: 2;
+      margin: 0px;
+    }
+    .item {
+      height: inherit;
+      padding: 6px 5px;
+      align-items: center;
+      &:hover {
+        background-color: #f0f2f5;
+        border-radius: 8px;
+      }
+    }
+  }
+}
+
+.mainSection {
+  justify-content: space-evenly;
+  .myInput {
+    height: 40px;
+    border-radius: 50px;
+    background-color: #f0f2f5;
+    border: none;
+    margin: 0px;
+    &:focus-visible {
+      border: 1px solid #00000091;
+    }
+  }
+  .person-card {
+    padding: 10px 0px;
+    &:hover {
+      background-color: #f0f2f5;
+      border-radius: 8px;
+    }
+  }
+}
