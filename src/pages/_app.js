@@ -5,9 +5,7 @@ import '@/styles/globals.scss'
 
 import Layout from "../components/layout/Layout";
 
-// import "../styles/Header.css"
 import UserContextProvider from "../contexts/userContext";
-
 
 export default function App({ Component, pageProps }) {
   return (

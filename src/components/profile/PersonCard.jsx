@@ -3,8 +3,8 @@ import Image from "next/image";
 
 const PersonCard = ({ user }) => {
     return (
-        <div className="col-5 row person-card">
-            <div className="col-3">
+        <div className="col-10 col-sm-6 row person-card" style={{ cursor: "pointer" }}>
+            <div className="col-3 col-xxl-2 me-2">
                 <Image
                     src={user.image}
                     alt="userImage"
@@ -13,7 +13,7 @@ const PersonCard = ({ user }) => {
                     style={{ borderRadius: "6px" }}
                 />
             </div>
-            <div className="d-flex flex-column col-6">
+            <div className="d-flex flex-column col-7">
                 <div style={{ fontSize: "30px", fontWeight: "500" }}>
                     {user.firstName} {user.lastName}
                 </div>

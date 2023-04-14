@@ -16,7 +16,7 @@ const SideBar = () => {
             style={{ justifyContent: "center" }}
         >
             <div
-                className="card d-flex flex-row py-3 col-11 mb-2 row"
+                className="card d-flex flex-row py-3 col-12 col-lg-11 mb-2 row"
                 style={{
                     backgroundColor: "hsla(360, 100%, 100%, 0.6)",
                     padding: "0px",
@@ -27,12 +27,14 @@ const SideBar = () => {
                         display: "inherit",
                         justifyContent: "flex-end",
                         cursor: "pointer",
+                        right: "15px",
+                        position: "relative",
                     }}
                 >
                     <Image src={more.src} width={13} height={4} />
                 </div>
 
-                <div className="col-3">
+                <div className="col-4 col-xxl-3">
                     <Image
                         src={user.image}
                         alt="userImage"
@@ -41,7 +43,7 @@ const SideBar = () => {
                         style={{ borderRadius: "6px" }}
                     />
                 </div>
-                <div className="d-flex flex-column ms-3 col-6">
+                <div className="d-flex flex-column ms-3 col-7 col-xxl-6">
                     <div style={{ fontSize: "30px", fontWeight: "500" }}>
                         {user.firstName} {user.lastName}
                     </div>
@@ -49,11 +51,12 @@ const SideBar = () => {
                         Country: {user.country}
                     </div>
                     <div
+                        className="d-flex flex-column flex-sm-row flex-lg-column flex-xl-row"
                         style={{
                             fontSize: "12px",
                             color: "#6A6A6A",
-                            display: "flex",
-                            flexDirection: "row",
+                            // display: "flex",
+                            // flexDirection: "row",
                             justifyContent: "space-between",
                             fontWeight: "400",
                         }}
@@ -61,7 +64,7 @@ const SideBar = () => {
                         <span>Membership Date:</span> <span>{user.membershipDate}</span>
                     </div>
                     <div
-                        className="d-flex flex-row justify-content-between"
+                        className="d-flex flex-row flex-lg-column flex-xl-row justify-content-between"
                         style={{ fontSize: "12px", color: "#6A6A6A", fontWeight: "400" }}
                     >
                         <div>Following: {user.following}</div>
@@ -71,7 +74,7 @@ const SideBar = () => {
             </div>
 
             <div
-                className="card d-flex flex-row py-3 col-11 mb-2 row"
+                className="card d-flex flex-row py-3 col-12 col-lg-11 mb-2 row"
                 style={{
                     backgroundColor: "hsla(360, 100%, 100%, 0.6)",
                     fontWeight: "500",
@@ -155,7 +158,7 @@ const SideBar = () => {
             </div>
 
             <div
-                className="card d-flex flex-row py-3 col-11 mb-2 row"
+                className="card d-flex flex-row py-3 col-12 col-lg-11 mb-2 row"
                 style={{
                     backgroundColor: "hsla(360, 100%, 100%, 0.6)",
                     fontWeight: "500",
@@ -207,7 +210,7 @@ const SideBar = () => {
             </div>
 
             <div
-                className="card d-flex flex-row py-3 col-11 mb-2 row"
+                className="card d-flex flex-row py-3 col-12 col-lg-11 mb-2 row"
                 style={{
                     backgroundColor: "hsla(360, 100%, 100%, 0.6)",
                     fontWeight: "500",
@@ -235,7 +238,9 @@ const SideBar = () => {
                         style={{ fontSize: "12px", fontWeight: "600", padding: "6px 5px" }}
                     >
                         <div>Bio</div>
-                        <div style={{ fontWeight: "normal", padding: "5px 0px" }}>{user.bio}</div>
+                        <div style={{ fontWeight: "normal", padding: "5px 0px" }}>
+                            {user.bio}
+                        </div>
                     </div>
                     <hr />
                     <div
