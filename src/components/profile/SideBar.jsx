@@ -7,8 +7,9 @@ import more from "../../assets/images/More.svg";
 import arrowRight from "../../assets/images/Arrow-Right.svg";
 
 const SideBar = () => {
-    const { user } = useContext(UserContext);
+    const { user, setMainSection } = useContext(UserContext);
     const [showArrow, setShowArrow] = useState(false);
+
     const [temp, setTemp] = useState(0);
     return (
         <div
@@ -90,10 +91,12 @@ const SideBar = () => {
                         setShowArrow(false);
                         setTemp(0);
                     }}
+                    onClick={e => setMainSection("timeline")}
+                    style={{ cursor: "pointer" }}
                 >
                     <div>TimeLine</div>
                     {showArrow === true && temp === 1 ? (
-                        <Image src={arrowRight.src} width={7} height={12} />
+                        <Image src={arrowRight.src} width={7} height={12} alt="arrow" />
                     ) : (
                         ""
                     )}
@@ -109,10 +112,12 @@ const SideBar = () => {
                         setShowArrow(false);
                         setTemp(0);
                     }}
+                    onClick={e => setMainSection("follower")}
+                    style={{ cursor: "pointer" }}
                 >
                     <div>{`Follower (${user.follower})`}</div>
                     {showArrow === true && temp === 2 ? (
-                        <Image src={arrowRight.src} width={7} height={12} />
+                        <Image src={arrowRight.src} width={7} height={12} alt="arrow" />
                     ) : (
                         ""
                     )}
@@ -128,10 +133,12 @@ const SideBar = () => {
                         setShowArrow(false);
                         setTemp(0);
                     }}
+                    onClick={e => setMainSection("following-user")}
+                    style={{ cursor: "pointer" }}
                 >
                     <div>{`Following User (${user.following})`}</div>
                     {showArrow === true && temp === 3 ? (
-                        <Image src={arrowRight.src} width={7} height={12} />
+                        <Image src={arrowRight.src} width={7} height={12} alt="arrow" />
                     ) : (
                         ""
                     )}
@@ -147,10 +154,12 @@ const SideBar = () => {
                         setShowArrow(false);
                         setTemp(0);
                     }}
+                    onClick={e => setMainSection("following-symbol")}
+                    style={{ cursor: "pointer" }}
                 >
                     <div>{`Following Symbol (${user.followingSymbol})`}</div>
                     {showArrow === true && temp === 4 ? (
-                        <Image src={arrowRight.src} width={7} height={12} />
+                        <Image src={arrowRight.src} width={7} height={12} alt="arrow" />
                     ) : (
                         ""
                     )}

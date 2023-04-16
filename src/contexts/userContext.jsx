@@ -10,15 +10,15 @@ const UserContextProvider = (props) => {
         lastName: "Sebti",
         country: "Iran",
         membershipDate: "Aug 17,2020",
-        following: "12",
-        follower: "126",
-        followingSymbol: "10",
+        following: 12,
+        follower: 126,
+        followingSymbol: 10,
         keyData: {
-            worldRanking: "100023",
-            countryRanking: "600",
-            numberOfTwittes: "344",
-            technicalAnalysis: "17",
-            predicts: "22",
+            worldRanking: 100023,
+            countryRanking: 600,
+            numberOfTwittes: 344,
+            technicalAnalysis: 17,
+            predicts: 22,
         },
         bio: "I'm changing the station I'm changing the station I'm changing the station I'm changing the station I'm changing the station I'm changing the station",
         predicts: [
@@ -104,9 +104,11 @@ const UserContextProvider = (props) => {
             },
         ],
     });
+    const [mainSection, setMainSection] = useState("timeline");
+
 
     return (
-        <UserContext.Provider value={{ user, setUser }}>
+        <UserContext.Provider value={{ user, setUser, mainSection, setMainSection }}>
             {props.children}
         </UserContext.Provider>
     );

@@ -40,6 +40,7 @@ const Header = () => {
     //     <span class="visually-hidden">New alerts</span>
     // </span>
     // position-relative برای parent
+
     return (
         <div className="headerPage">
             <div className="myNavbar row justify-content-sm-between py-2 py-md-0">
@@ -51,7 +52,7 @@ const Header = () => {
                         onChange={(e) => useSearch(e.target.value)}
                     />
                 </div>
-                <div className="navItem d-none d-md-flex col-12 col-sm-6 col-md-5 mt-2 mt-sm-0 justify-content-around justify-content-sm-end justify-content-md-between justify-content-lg-center">
+                <div className="navItem d-none d-md-flex col-12 col-sm-6 col-md-4 mt-2 mt-sm-0 justify-content-around justify-content-sm-end justify-content-md-between justify-content-lg-center justify-content-xxl-evenly">
                     <div className="navItem-iconParent">
                         <svg
                             id="home"
@@ -79,7 +80,16 @@ const Header = () => {
                             ""
                         )}
                     </div>
-                    <div className="navItem-iconParent">
+                    <div className="navItem-iconParent" style={{ position: "relative" }}>
+                        <span
+                            className="position-absolute translate-middle p-2 bg-danger border border-light rounded-circle"
+                            style={{
+                                top: "12px",
+                                right: "0px",
+                            }}
+                        >
+                            <span className="visually-hidden">New alerts</span>
+                        </span>
                         <svg
                             id="note"
                             width="28"
@@ -106,7 +116,16 @@ const Header = () => {
                             ""
                         )}
                     </div>
-                    <div className="navItem-iconParent">
+                    <div className="navItem-iconParent" style={{ position: "relative" }}>
+                        <span
+                            className="position-absolute translate-middle p-2 bg-danger border border-light rounded-circle"
+                            style={{
+                                top: "12px",
+                                right: "0px",
+                            }}
+                        >
+                            <span className="visually-hidden">New alerts</span>
+                        </span>
                         <svg
                             id="message"
                             width="30"
@@ -234,6 +253,7 @@ const Header = () => {
                         )}
                     </div>
                 </div>
+                <div className="d-none d-md-inline col-md-1"></div>
                 <div className="navItem d-none d-md-flex col-12 col-md-3 mt-2 mt-sm-0 justify-content-center justify-content-sm-end">
                     <div className="icon pro">
                         <Image

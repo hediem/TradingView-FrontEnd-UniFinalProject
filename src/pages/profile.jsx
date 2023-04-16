@@ -4,7 +4,7 @@ import React from "react";
 
 const Profile = () => {
     return (
-        <div className="row justify-content-center" style={{ width: "100vw", padding: "0px" }} >
+        <div className="row justify-content-center" style={{ padding: "0px" }} >
             <div className="col-12 col-sm-10 col-md-8 col-lg-4 mt-1">
                 <SideBar />
             </div>
