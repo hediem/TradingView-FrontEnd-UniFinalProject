@@ -1,6 +1,21 @@
 /* Import the Bootstrap Icons CSS stylesheets */
 @import "~bootstrap-icons/font/bootstrap-icons.css";
 
+@mixin iconparent() {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: inherit;
+  &:hover {
+    background-color: #f0f2f5;
+    border-radius: 8px;
+  }
+}
+@mixin iconRound() {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
 .headerPage .myNavbar,
 .offcanvas-body {
   height: auto;
@@ -16,25 +31,18 @@
     align-items: center;
     height: inherit;
   }
+
   .navItem-iconParent {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: inherit;
-    &:hover {
-      background-color: #f0f2f5;
-      border-radius: 8px;
-    }
+    @include iconparent();
   }
+
   .topIcon {
     cursor: pointer;
     margin: 13px 12px;
   }
   .lIcon {
     background: linear-gradient(to top, #6ce8e0, #8f9296);
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    @include iconRound();
   }
   .picIcon {
     border-radius: 50px;
@@ -80,7 +88,7 @@
 }
 
 .row {
-  margin: 0px;
+  margin: 0px !important;
 }
 
 .profile-sideBar {
@@ -124,6 +132,29 @@
     &:hover {
       background-color: #f0f2f5;
       border-radius: 8px;
+    }
+  }
+}
+
+.chart {
+  .predicts {
+    .iconParent {
+      @include iconparent();
+      width: 50%;
+    }
+    hr {
+      margin: 0px;
+    }
+    .predict-card {
+      &:hover {
+        background-color: #e4e6eb;
+        border-radius: 8px;
+      }
+    }
+  }
+  .message {
+    .icon {
+      @include iconRound();
     }
   }
 }

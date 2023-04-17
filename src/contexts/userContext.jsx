@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import userpic from "../assets/images/user.jpg";
+import google from "../assets/images/Google.svg"
+import uber from "../assets/images/uber.svg"
 
 export const UserContext = React.createContext();
 
@@ -23,7 +25,7 @@ const UserContextProvider = (props) => {
         bio: "I'm changing the station I'm changing the station I'm changing the station I'm changing the station I'm changing the station I'm changing the station",
         predicts: [
             {
-                logo: "",
+                logo: google,
                 symbolName: "Google",
                 day: "Friday, August 21,2020",
                 timeDivision: "1H",
@@ -40,10 +42,10 @@ const UserContextProvider = (props) => {
                 },
                 completed: false,
                 text: "I'm changing the station I'm changing the station I'm changing the station I'm changing the station I'm changing the station I'm changing the station",
-                //something
+                republish: 2,
             },
             {
-                logo: "",
+                logo: uber,
                 symbolName: "Uber",
                 day: "Friday, August 21,2020",
                 timeDivision: "15m",
@@ -60,10 +62,10 @@ const UserContextProvider = (props) => {
                 },
                 completed: false,
                 text: "I'm changing the station I'm changing the station I'm changing the station I'm changing the station I'm changing the station I'm changing the station",
-                //something
+                republish: 1,
             },
             {
-                logo: "",
+                logo: google,
                 symbolName: "Google",
                 day: "Friday, August 21,2020",
                 timeDivision: "M",
@@ -80,10 +82,10 @@ const UserContextProvider = (props) => {
                 },
                 completed: false,
                 text: "I'm changing the station I'm changing the station I'm changing the station I'm changing the station I'm changing the station I'm changing the station",
-                //something
+                republish: 5,
             },
             {
-                logo: "",
+                logo: uber,
                 symbolName: "Uber",
                 day: "Friday, August 21,2020",
                 timeDivision: "D",
@@ -96,19 +98,19 @@ const UserContextProvider = (props) => {
                     num: 0,
                 },
                 permium: {
-                    flag: false,
-                    num: 0,
+                    flag: true,
+                    num: 5,
                 },
                 text: "I'm changing the station I'm changing the station I'm changing the station I'm changing the station I'm changing the station I'm changing the station",
-                //something
+                republish: 3,
             },
         ],
     });
     const [mainSection, setMainSection] = useState("timeline");
-
+    const [predict, setPredict] = useState()
 
     return (
-        <UserContext.Provider value={{ user, setUser, mainSection, setMainSection }}>
+        <UserContext.Provider value={{ user, setUser, mainSection, setMainSection, predict, setPredict }}>
             {props.children}
         </UserContext.Provider>
     );

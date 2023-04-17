@@ -1,8 +1,8 @@
-import MainSection from "@/components/profile/MainSection";
-import SideBar from "@/components/profile/SideBar";
+import MainSection from "@/components/User/home/MainSection";
+import SideBar from "@/components/User/home/SideBar";
 import React from "react";
 
-const Profile = () => {
+const Home = () => {
     return (
         <div className="row justify-content-center" style={{ padding: "0px" }} >
             <div className="col-12 col-sm-10 col-md-8 col-lg-4 mt-1">
@@ -16,4 +16,4 @@ const Profile = () => {
     );
 };
 
-export default Profile
+export default Home
