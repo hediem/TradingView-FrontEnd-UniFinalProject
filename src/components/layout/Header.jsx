@@ -14,7 +14,7 @@ import Link from "next/link";
 
 const Header = () => {
     const [search, useSearch] = useState();
-    const [active, setActive] = useState("home");
+    const [active, setActive] = useState("");
     const [show, setShow] = useState(false);
 
     const { user } = useContext(UserContext);
