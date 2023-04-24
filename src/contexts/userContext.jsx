@@ -11,7 +11,7 @@ const UserContextProvider = (props) => {
         firstName: "Ali",
         lastName: "Sebti",
         country: "Iran",
-        membershipDate: "Aug 17,2020",
+        membershipDate: 1597642808000,
         following: 12,
         follower: 126,
         followingSymbol: 10,
@@ -27,7 +27,7 @@ const UserContextProvider = (props) => {
             {
                 logo: google,
                 symbolName: "Google",
-                day: "Friday, August 21,2020",
+                day: 1597988408000,
                 timeDivision: "1H",
                 favorite: 3,
                 disLike: 1,
@@ -47,7 +47,7 @@ const UserContextProvider = (props) => {
             {
                 logo: uber,
                 symbolName: "Uber",
-                day: "Friday, August 21,2020",
+                day: 1597992008000,
                 timeDivision: "15m",
                 favorite: 71,
                 disLike: 4,
@@ -67,7 +67,7 @@ const UserContextProvider = (props) => {
             {
                 logo: google,
                 symbolName: "Google",
-                day: "Friday, August 21,2020",
+                day: 1597995608000,
                 timeDivision: "M",
                 favorite: 33,
                 disLike: 10,
@@ -87,7 +87,7 @@ const UserContextProvider = (props) => {
             {
                 logo: uber,
                 symbolName: "Uber",
-                day: "Friday, August 21,2020",
+                day: 1597999208000,
                 timeDivision: "D",
                 favorite: 15,
                 disLike: 4,
@@ -108,9 +108,18 @@ const UserContextProvider = (props) => {
     });
     const [mainSection, setMainSection] = useState("timeline");
     const [predict, setPredict] = useState()
+    // const [sortedByLikePredict, setSortedByLikePredict] = useState();
 
+    function sortByLike() {
+        user.predicts.sort((a, b) => b.favorite - a.favorite);
+    }
+
+    function sortByLast() {
+        user.predicts.sort((a, b) => a.day - b.day);
+
+    }
     return (
-        <UserContext.Provider value={{ user, setUser, mainSection, setMainSection, predict, setPredict }}>
+        <UserContext.Provider value={{ user, setUser, mainSection, setMainSection, predict, setPredict, sortByLike, sortByLast }}>
             {props.children}
         </UserContext.Provider>
     );

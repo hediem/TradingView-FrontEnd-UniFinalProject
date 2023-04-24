@@ -16,6 +16,11 @@
   width: 40px;
   height: 40px;
 }
+@mixin card() {
+  color: #202020;
+  border: none;
+  border-radius: 7px;
+}
 .headerPage .myNavbar,
 .offcanvas-body {
   height: auto;
@@ -94,9 +99,7 @@
 
 .profile-sideBar {
   .card {
-    color: #202020;
-    border: none;
-    border-radius: 7px;
+    @include card();
     hr {
       color: #f0f2f5 !important;
       opacity: 1;
@@ -138,7 +141,13 @@
 }
 
 .chart {
+  .card {
+    @include card();
+    background-color: #ffffff !important;
+  }
   .predicts {
+    @include card();
+    background-color: #ffffff;
     .iconParent {
       @include iconparent();
       width: 50%;

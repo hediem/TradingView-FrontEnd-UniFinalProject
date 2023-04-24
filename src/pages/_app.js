@@ -11,7 +11,7 @@ export default function App({ Component, pageProps }) {
   return (
     <UserContextProvider>
       <Layout>
-        <div style={{ backgroundColor: "#F5F5F5", height: "94vh" }}>
+        <div style={{ backgroundColor: "#F5F5F5", height: "auto", paddingBottom: "20px" }}>
           <Component {...pageProps} />
         </div>
       </Layout>

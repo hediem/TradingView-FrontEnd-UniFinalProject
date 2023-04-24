@@ -11,13 +11,14 @@ import up from "../../../assets/images/Up.svg";
 import down from "../../../assets/images/Down.svg";
 import more from "../../../assets/images/More.svg";
 import { UserContext } from "@/contexts/userContext";
+import { longDate } from "@/components/date";
 
 const Predict = ({ data, index }) => {
     const [showMore, setShowMore] = useState(false);
     const { setPredict } = useContext(UserContext);
     return (
         <div
-            className="col-12 col-md-11 col-lg-12 col-xxl-10 justify-content-between row predict-card py-1"
+            className="col-12 col-md-11 col-lg-12 col-xxl-12 justify-content-between row predict-card py-1"
             key={index}
             onMouseEnter={(e) => {
                 setShowMore(true);
@@ -58,7 +59,7 @@ const Predict = ({ data, index }) => {
                     <div
                         style={{ fontSize: "10px", fontWeight: "500", color: "#65676B" }}
                     >
-                        {data.day}
+                        {longDate(data.day)}
                     </div>
                     <div
                         style={{ fontSize: "10px", fontWeight: "500", color: "#65676B" }}

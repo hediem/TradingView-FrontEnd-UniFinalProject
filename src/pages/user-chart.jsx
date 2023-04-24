@@ -3,15 +3,17 @@ import Predicts from "../components/user/chart/Predicts";
 import Message from "../components/user/chart/Message";
 import TradingViewWidget from "../components/user/chart/TradingViewWidget";
 import { UserContext } from "@/contexts/userContext";
+import Details from "@/components/user/home/Details";
 
 const chartPage = () => {
-    const { predict } = useContext(UserContext);
+    const { predict, user } = useContext(UserContext);
     return (
         <div className="row chart justify-content-center">
-            <div className="col-12 col-sm-10 col-md-8 col-lg-4 mt-1 p-0">
+            <div className="col-12 col-sm-10 col-md-8 col-lg-4 col-xxl-3 mt-2 p-0">
+                <Details user={user} />
                 <Predicts />
             </div>
-            <div className="col-12 col-sm-10 col-md-8 mt-1">
+            <div className="col-12 col-sm-10 col-md-8 col-xxl-9 mt-2">
                 {predict ? (
                     <>
                         <div>
@@ -22,7 +24,7 @@ const chartPage = () => {
                         </div>
                     </>
                 ) : (
-                    <div className="mt-3 ms-2" style={{
+                    <div className="ms-2" style={{
                         backgroundColor: "#ffffff",
                         padding: "25px 20px",
                         borderRadius: "8px",
