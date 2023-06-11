@@ -1,8 +1,8 @@
 import React, { useState, useContext } from "react";
 import { UserContext } from "@/contexts/userContext";
-import searchPic from "../../../assets/images/Search.svg";
+import searchPic from "../../../../assets/images/Search.svg";
 import Image from "next/image";
-import PersonCard from "./PersonCard";
+import PersonCard from "../common/PersonCard";
 
 const MainSection = () => {
     const [search, useSearch] = useState();

@@ -1,16 +1,16 @@
 import React, { useContext } from "react";
 import Predicts from "../components/chart/common/Predicts";
-import Message from "../components/chart/user/Message";
+import Message from "../components/chart/other-user/Message";
 import TradingViewWidget from "../components/chart/common/TradingViewWidget";
 import { UserContext } from "@/contexts/userContext";
-// import Details from "@/components/user/home/Details";
+import Details from "@/components/user-profile/home/common/Details";
 
-const chartPage = () => {
+const OtherChartPage = () => {
     const { predict, user } = useContext(UserContext);
     return (
         <div className="row chart justify-content-center">
-            <div className="col-12 col-sm-10 col-md-8 col-lg-4 col-xxl-3 p-0" style={{ marginTop: "-0.5rem" }}>
-                {/* <Details user={user} /> */}
+            <div className="col-12 col-sm-10 col-md-8 col-lg-4 col-xxl-3 mt-2 p-0">
+                <Details user={user} />
                 <Predicts />
             </div>
             <div className="col-12 col-sm-10 col-md-8 col-xxl-9 mt-2">
@@ -35,4 +35,4 @@ const chartPage = () => {
     );
 };
 
-export default chartPage;
+export default OtherChartPage;

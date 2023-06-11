@@ -1,5 +1,5 @@
-import MainSection from "@/components/User/home/MainSection";
-import SideBar from "@/components/User/home/SideBar";
+import MainSection from "@/components/user-profile/home/user/MainSection";
+import SideBar from "@/components/user-profile/home/user/SideBar";
 import React from "react";
 
 const Home = () => {

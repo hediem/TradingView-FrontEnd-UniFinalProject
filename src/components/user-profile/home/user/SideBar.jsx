@@ -3,9 +3,9 @@ import Image from "next/image";
 
 import { UserContext } from "@/contexts/userContext";
 
-import more from "../../../assets/images/More.svg";
-import arrowRight from "../../../assets/images/Arrow-Right.svg";
-import Details from "./Details";
+import more from "../../../../assets/images/More.svg";
+import arrowRight from "../../../../assets/images/Arrow-Right.svg";
+import Details from "../common/Details";
 
 const SideBar = () => {
     const { user, setMainSection } = useContext(UserContext);

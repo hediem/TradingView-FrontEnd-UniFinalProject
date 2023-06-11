@@ -6,6 +6,8 @@ import permium from "../../../assets/images/Crown.svg";
 import favorite from "../../../assets/images/Like.svg";
 import dislike from "../../../assets/images/Dislike.svg";
 import republish from "../../../assets/images/Republish.svg";
+import line from "../../../assets/images/Line.svg"
+import { longDate } from "@/components/date";
 
 const Message = () => {
     const { user, predict } = useContext(UserContext);
@@ -15,17 +17,34 @@ const Message = () => {
             style={{ backgroundColor: "#ffffff", borderRadius: "0px 0px 8px 8px" }}
             className="message row py-2 justify-content-end justify-content-lg-between"
         >
-            <div className="d-flex align-items-center col-12 col-md-6 col-lg-6">
+            <div className="d-flex-column d-xl-flex align-items-center col-12 col-md-6 col-lg-7">
                 <Image src={user.image} width={40} height={40} className="icon me-3" />
-                <div className="d-flex flex-column" style={{ fontWeight: "500" }}>
+                {/* <div className="d-flex col-12 col-xl-3 align-items-center">
+                    <div>
+                        <div style={{ fontWeight: "500" }}>
+                            {user.firstName}{" "}
+                            {user.lastName}
+                        </div>
+                        <div style={{ fontSize: "10px", color: "#65676B" }}>
+                            World Rank: {user.keyData.worldRanking}
+                        </div>
+                        <div style={{ fontSize: "10px", color: "#65676B" }}>
+                            Score: {user.keyData.score}
+                        </div>
+                    </div>
+                </div>
+                <div className="d-none d-xl-inline">
+                    <img src={line.src} alt="line" />
+                </div> */}
+                <div className="d-flex flex-column col-12 col-xl-8" style={{ fontWeight: "500" }}>
                     <div style={{ color: "#65676B", fontSize: "10px" }}>
-                        {predict.day}
+                        {longDate(predict.day)}
                     </div>
                     <div style={{ fontSize: "12px" }}>{predict.text}</div>
                 </div>
             </div>
             <div
-                className="d-flex flex-row col-10 col-sm-6 col-lg-4 justify-content-between align-items-end"
+                className="d-flex flex-row col-10 col-sm-6 col-lg-3 justify-content-between align-items-end"
                 style={{ color: "#657786" }}
             >
                 <div>

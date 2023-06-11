@@ -15,12 +15,15 @@ const UserContextProvider = (props) => {
         following: 12,
         follower: 126,
         followingSymbol: 10,
+        link: "https://www.facebook.com/ali.sebti.71/about",
         keyData: {
             worldRanking: 100023,
             countryRanking: 600,
             numberOfTwittes: 344,
             technicalAnalysis: 17,
             predicts: 22,
+            score: 133.66,
+            truePredicts: 60,
         },
         bio: "I'm changing the station I'm changing the station I'm changing the station I'm changing the station I'm changing the station I'm changing the station",
         predicts: [

@@ -6,16 +6,18 @@ import '@/styles/globals.scss'
 import Layout from "../components/layout/Layout";
 
 import UserContextProvider from "../contexts/userContext";
+import SymbolContextProvider from "@/contexts/symbolContext";
 
 export default function App({ Component, pageProps }) {
   return (
     <UserContextProvider>
-      <Layout>
-        <div style={{ backgroundColor: "#F5F5F5", height: "auto", paddingBottom: "20px" }}>
-          <Component {...pageProps} />
-        </div>
-      </Layout>
-
+      <SymbolContextProvider>
+        <Layout>
+          <div style={{ backgroundColor: "#F5F5F5", height: "auto", paddingBottom: "20px" }}>
+            <Component {...pageProps} />
+          </div>
+        </Layout>
+      </SymbolContextProvider>
     </UserContextProvider>
   )
 }

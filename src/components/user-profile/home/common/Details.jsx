@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 
-import more from "../../../assets/images/More.svg";
+import more from "../../../../assets/images/More.svg";
 import date from "@/components/date";
 
 const Details = ({ user }) => {
