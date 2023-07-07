@@ -173,3 +173,27 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.overview {
+  .title {
+    font-size: 17px;
+    font-weight: 500;
+  }
+  .des {
+    hr {
+      margin: 0.25rem 0;
+    }
+    #bigHr {
+      border-top: 5px solid;
+      opacity: 0.1;
+      margin: 0.25rem 0;
+    }
+    .item {
+      font-size: 13px;
+      font-weight: 500;
+    }
+    .data {
+      font-size: 13px;
+      font-weight: 700;
+    }
+  }
+}

@@ -13,7 +13,7 @@ const OtherChartPage = () => {
                 <Details user={user} />
                 <Predicts />
             </div>
-            <div className="col-12 col-sm-10 col-md-8 col-xxl-9 mt-2">
+            <div className="col-12 col-sm-10 col-md-8 col-xxl-9 mt-2" style={{ height: "90vh" }}>
                 {predict ? (
                     <>
                         <div>
@@ -31,7 +31,7 @@ const OtherChartPage = () => {
                     }}>Select...</div>
                 )}
             </div>
-        </div>
+        </div >
     );
 };
 

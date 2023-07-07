@@ -5,7 +5,6 @@ import About from "./About";
 
 const MainSection = () => {
     const { user, mainSection } = useContext(UserContext);
-    console.log(user);
     return (
         <div className="mainSection row">
             {mainSection === "about" ? (

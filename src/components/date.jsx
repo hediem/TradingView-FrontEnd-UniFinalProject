@@ -28,3 +28,22 @@ export function longDate(timestamp) {
     return dateString;
 
 }
+
+
+export function dateWithClock(timestamp) {
+
+    const date = new Date(timestamp);
+
+    const options = {
+        month: 'short',
+        day: 'numeric',
+        year: 'numeric',
+        hour: 'numeric',
+        minute: 'numeric',
+        hour12: true,
+      };
+      
+      const dateString = date.toLocaleString('en-US', options);
+    return dateString;
+
+}

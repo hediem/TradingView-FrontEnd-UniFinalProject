@@ -1,17 +1,16 @@
 import React, { useState } from "react";
-import userpic from "../assets/images/user.jpg";
-import google from "../assets/images/Google.svg"
-import uber from "../assets/images/uber.svg"
+import symbolPic from "../assets/images/Symbol.svg";
 
 export const SymbolContext = React.createContext();
 
 const SymbolContextProvider = (props) => {
     const [symbol, setSymbol] = useState({
         name: "Apple Inc.",
+        image: symbolPic.src,
         price: 1509.54,
         changes: {
             //type 0=> rise , type 1 => fall
-            type: "0",
+            type: 0,
             price: 5.21,
             percent: 0.35,
         },

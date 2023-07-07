@@ -8,7 +8,7 @@ const Home = () => {
             <div className="col-12 col-sm-10 col-md-8 col-lg-4 mt-2">
                 <SideBar />
             </div>
-            <div className="col-12 col-sm-10 col-md-8 col-lg-6 mt-2" style={{ backgroundColor: "#ffffff", borderRadius: "7px" }}>
+            <div className="col-12 col-sm-10 col-md-8 col-lg-6 mt-2" style={{ backgroundColor: "#ffffff", borderRadius: "7px", height: "90vh" }}>
                 <MainSection />
             </div>
             <div className="col-12 col-sm-10 col-md-8 col-lg-2 mt-2"></div>
