@@ -1,11 +1,20 @@
 /* Import the Bootstrap Icons CSS stylesheets */
 @import "~bootstrap-icons/font/bootstrap-icons.css";
-
+// @font-face {
+//   font-family: "Roboto";
+//   src: url("../assets/fonts/Roboto-Regular.eot");
+//   font-weight: 400;
+//   font-style: normal;
+// }
+// body {
+//   font-family: "Roboto";
+// }
 @mixin iconparent() {
   display: flex;
   flex-direction: column;
   align-items: center;
   height: inherit;
+  font-size: 15px;
   &:hover {
     background-color: #f0f2f5;
     border-radius: 8px;
@@ -29,7 +38,7 @@
   // display: flex;
   // justify-content: space-between;
   &:not(.offcanvas-body) {
-    width: 100vw;
+    width: auto;
   }
   .navItem {
     display: flex;
@@ -79,7 +88,7 @@
   }
   .myInput {
     height: 40px;
-    border-radius: 50px;
+    border-radius: 15px;
     background-color: #f0f2f5;
     border: none;
     width: 280px;
@@ -94,7 +103,8 @@
 }
 
 .row {
-  margin: 0px !important;
+  margin-left: 0px !important;
+  margin-right: 0px !important;
 }
 
 .profile-sideBar {
@@ -132,7 +142,8 @@
   }
   .person-card {
     padding: 10px 0px;
-    justify-content: center;
+    justify-content: space-evenly;
+    align-items: center;
     &:hover {
       background-color: #f0f2f5;
       border-radius: 8px;
@@ -150,7 +161,7 @@
     background-color: #ffffff;
     .iconParent {
       @include iconparent();
-      width: 50%;
+      width: 45%;
     }
     hr {
       margin: 0px;
@@ -195,5 +206,10 @@
       font-size: 13px;
       font-weight: 700;
     }
+  }
+}
+.main-section-parent {
+  @media (min-width: 991px) {
+    margin-left: -30px;
   }
 }

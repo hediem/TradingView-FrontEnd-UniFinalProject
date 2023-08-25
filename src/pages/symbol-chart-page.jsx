@@ -14,7 +14,7 @@ const chartPage = () => {
         style={{ marginTop: "-0.5rem", maxWidth: "404px" }}
       >
         {/* <Details user={user} /> */}
-        <Predicts />
+        <Predicts symbolFlag={true} />
       </div>
       <div
         className="col-12 col-sm-10 col-md-8 col-xxl-9 mt-2"
@@ -23,7 +23,7 @@ const chartPage = () => {
         {predict ? (
           <>
             <div>
-              <Message />
+              <Message symbolFlag={true} />
             </div>
             <div className="mt-2">
               <TradingViewWidget />

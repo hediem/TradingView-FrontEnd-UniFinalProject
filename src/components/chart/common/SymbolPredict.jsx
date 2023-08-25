@@ -13,7 +13,7 @@ import more from "../../../assets/images/More.svg";
 import { UserContext } from "@/contexts/userContext";
 import { longDate } from "@/components/date";
 
-const Predict = ({ data, index }) => {
+const SymbolPredict = ({ data, index }) => {
   const [showMore, setShowMore] = useState(false);
   const { setPredict } = useContext(UserContext);
   return (
@@ -43,36 +43,36 @@ const Predict = ({ data, index }) => {
           <div style={{ width: "13px", height: "4px" }}></div>
         )}
       </div>
-      <div className="d-flex align-items-center col-12 col-sm-6 col-lg-12 col-xxl-6">
+      <div className="d-flex align-items-center col-12 col-sm-6 col-lg-12 col-xxl-6 ps-2">
         <Image
-          src={data.logo}
+          src={data.writerProfile}
           width={47}
           height={46}
-          style={{ cursor: "pointer" }}
+          style={{ cursor: "pointer", borderRadius: "5px" }}
           onClick={(e) => setPredict(data)}
         />
-        <div className="ms-3">
+        <div className="ms-2">
           <div
-            style={{ fontSize: "15px", fontWeight: "500", cursor: "pointer" }}
+            style={{ fontSize: "14px", fontWeight: "500", cursor: "pointer" }}
             onClick={(e) => setPredict(data)}
           >
-            {data.symbolName}
+            {data.writer}
           </div>
           <div
-            style={{ fontSize: "10px", fontWeight: "500", color: "#65676B" }}
+            style={{ fontSize: "10px", fontWeight: "400", color: "#65676B" }}
           >
             {longDate(data.day)}
           </div>
           <div
-            style={{ fontSize: "10px", fontWeight: "500", color: "#65676B" }}
+            style={{ fontSize: "10px", fontWeight: "400", color: "#65676B" }}
           >
-            {data.timeDivision}
+            Rank: {data.rank}
           </div>
         </div>
       </div>
-      <div className="d-flex flex-column col-12 col-sm-6 col-lg-12 col-xxl-6 justify-content-end row">
+      <div className="d-flex flex-column col-12 col-sm-6 col-lg-12 col-xxl-6 row px-0 justify-content-end">
         <div className="d-flex flex-row col-12" style={{ color: "#657786" }}>
-          {data.permium.flag ? (
+          {/* {data.permium.flag ? (
             <div className="col-3">
               <Image src={permium.src} width={16} height={16} />
               <span style={{ fontSize: "13px", marginLeft: "2px" }}>
@@ -81,21 +81,21 @@ const Predict = ({ data, index }) => {
             </div>
           ) : (
             <div className="col-3"></div>
-          )}
-          <div style={{ cursor: "pointer" }} className="col-3">
+          )} */}
+          <div style={{ cursor: "pointer" }} className="col-4">
             <Image src={favorite.src} width={16} height={16} />
             <span style={{ fontSize: "13px", marginLeft: "2px" }}>
               {data.favorite}
             </span>
           </div>
-          <div style={{ cursor: "pointer" }} className="col-3">
+          <div style={{ cursor: "pointer" }} className="col-4">
             <Image src={dislike.src} width={16} height={16} />
             <span style={{ fontSize: "13px", marginLeft: "2px" }}>
               {data.disLike}
             </span>
           </div>
           {data.completed ? (
-            <div className="col-3">
+            <div className="col-4">
               <Image src={correct.src} width={16} height={16} />
             </div>
           ) : data.target.flag ? (
@@ -108,8 +108,12 @@ const Predict = ({ data, index }) => {
               )}
               <span style={{ fontSize: "10px" }}>{data.target.num}</span>
             </div>
+          ) : !data.completed ? (
+            <div className="col-4">
+              <Image src={close.src} width={16} height={16} />
+            </div>
           ) : (
-            <div className="col-3"></div>
+            <div className="col-4"></div>
           )}
         </div>
       </div>
@@ -117,4 +121,4 @@ const Predict = ({ data, index }) => {
   );
 };
 
-export default Predict;
+export default SymbolPredict;
