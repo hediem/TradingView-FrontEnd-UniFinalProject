@@ -2,11 +2,12 @@ import React, { useContext } from "react";
 import Image from "next/image";
 import { UserContext } from "@/contexts/userContext";
 
-import permium from "../../../assets/images/Crown.svg";
-import favorite from "../../../assets/images/Like.svg";
-import dislike from "../../../assets/images/Dislike.svg";
-import republish from "../../../assets/images/Republish.svg";
-import line from "../../../assets/images/Line.svg";
+import permium from "@/assets/images/Crown.svg";
+import favorite from "@/assets/images/Like.svg";
+import dislike from "@/assets/images/Dislike.svg";
+import republish from "@/assets/images/Republish.svg";
+import tick from "@/assets/images/checked.png";
+import line from "@/assets/images/Line.svg";
 import { longDate } from "@/components/date";
 
 const Message = ({ symbolFlag }) => {
@@ -17,7 +18,14 @@ const Message = ({ symbolFlag }) => {
       style={{ backgroundColor: "#ffffff", borderRadius: "0px 0px 8px 8px" }}
       className="message row py-2 justify-content-end justify-content-lg-between"
     >
-      <div className="d-flex-column d-xl-flex align-items-center col-12 col-md-6 col-lg-7">
+      <div
+        className={`d-flex-column d-xl-flex align-items-center ${
+          predict.autosave === undefined
+            ? "col-12 col-md-6 col-lg-7"
+            : "col-12 col-xl-7"
+        }`}
+        // style={{ maxWidth: predict.autosave !== undefined ? "60%" : "" }}
+      >
         <Image src={user.image} width={40} height={40} className="icon me-3" />
         {symbolFlag && predict.autosave === undefined ? (
           <div
@@ -107,7 +115,80 @@ const Message = ({ symbolFlag }) => {
           </div>
         </div>
       ) : (
-        ""
+        <div
+          className="d-flex flex-row col-12 col-sm-9 col-lg-7 col-xl-6 col-xxl-5 justify-content-between align-items-end mt-3"
+          style={{ maxWidth: "430px" }}
+        >
+          <div
+            className="d-flex align-items-center justify-content-lg-around"
+            style={{ width: "65%" }}
+          >
+            <div
+              className="d-flex flex-column "
+              style={{
+                border: "1px solid #f0f2f5",
+                borderRadius: "5px",
+              }}
+            >
+              <div
+                style={{ padding: "4px 15px", fontWeight: "600" }}
+                className="d-flex align-items-center justify-content-between"
+              >
+                <Image src={tick} alt="tick" width={20} height={20} />
+                Predict
+              </div>
+              <hr style={{ margin: "0px" }} />
+              <div
+                style={{
+                  margin: "4px 10px",
+                  display: "flex",
+                  justifyContent: "space-between",
+                }}
+              >
+                <div></div>
+                <Image src={line} alt="line" height={25} />
+                <div></div>
+              </div>
+            </div>
+            <div
+              className="d-flex flex-column"
+              style={{
+                border: "1px solid #f0f2f5",
+                borderRadius: "5px",
+              }}
+            >
+              <div
+                style={{ padding: "4px 15px", fontWeight: "600" }}
+                className="d-flex align-items-center justify-content-between"
+              >
+                <Image src={tick} alt="tick" width={20} height={20} />
+                Premium
+              </div>
+              <hr style={{ margin: "0px" }} />
+              <div
+                style={{
+                  backgroundColor: "#F0F2F5",
+                  borderRadius: "6px",
+                  margin: "4px 5px",
+                  padding: "0px 3px",
+                }}
+              >
+                1000
+              </div>
+            </div>
+          </div>
+          <div
+            style={{
+              backgroundColor: "#F0F2f5",
+              padding: "4px 15px",
+              borderRadius: "5px",
+              fontWeight: "600",
+              cursor: "pointer",
+            }}
+          >
+            Publish
+          </div>
+        </div>
       )}
     </div>
   );
