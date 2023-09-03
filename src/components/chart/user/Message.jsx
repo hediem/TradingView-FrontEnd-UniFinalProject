@@ -22,7 +22,7 @@ const Message = ({ symbolFlag }) => {
         className={`d-flex-column d-xl-flex align-items-center ${
           predict.autosave === undefined
             ? "col-12 col-md-6 col-lg-7"
-            : "col-12 col-xl-7"
+            : "col-12 col-xxl-7"
         }`}
         // style={{ maxWidth: predict.autosave !== undefined ? "60%" : "" }}
       >
